@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">
+        <p id="p1">This is a paragraph</p>
+        <p id="p2">This is another parapraph</p>
+    </div>
+    <script>
+        var para = document.createElement("p");
+        var node = document.createTextNode("This is new.");
+        para.appendChild(node);
+
+        var para2 = document.createElement("p");
+        var node2 = document.createTextNode("This is another new.");
+        para2.appendChild(node2);
+
+        var element = document.getElementById("div1");
+        var child = document.getElementById("p2");
+        //element.appendChild(para);  //add paragraph as last child element in div
+        element.insertBefore(para,child);  //insert paragraph in specified place into div
+
+        var para2 = document.getElementById("p2"); 
+        element.removeChild(para2); //remove paragraph2 using removeChild function
+        //para2.remove();  //remove paragraph2 
+        element.replaceChild(para2,para); //replacing para on para2
+    </script>
+</body>
+</html>

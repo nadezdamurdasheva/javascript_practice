@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        var person = {
+        name: "Nadya",
+        age: 21,
+        language: "rus",
+        get lang() {
+            return this.language.toUpperCase();
+        }
+        };
+        var person2 = {
+            name: "Mama",
+            age: 42,
+            language: "",
+            set lang(value) {
+                this.language = value.toUpperCase();
+            }
+        };
+        person2.lang = "eng";
+        var person3 = {
+            name: "Papa",
+            sur_name: "Father",
+            language: "rus",
+            hobby: ""
+        };
+        /*Object.defineProperty(person3, "lang", {
+            get function () {this.language.toUpperCase();}
+        });
+        Object.defineProperty(person3, "fav_hobby", {
+            set function (value) {this.hobby = value;}
+        });
+        person3.fav_hobby = "design"; */
+        document.getElementById("demo").innerHTML = person.lang + " " + person2.language;
+    </script>
+</body>
+</html>

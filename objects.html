@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        var person = {
+            name: "Nadya",
+            surname: "Mur",
+            age: 21,
+            today: new Date(),
+            full_name: function() {
+                return this.name + " " + this.surname;
+            }
+        };
+        //document.getElementById("demo").innerHTML = person.full_name() + "<br>";
+        delete person.age;
+        var i, text = "", array = Object.values(person);
+        var myString = JSON.stringify(person);
+        for (x in person) {
+            text += person[x];
+        }
+        
+        document.getElementById("demo").innerHTML = text + "<br>" + array + "<br>" + person.full_name() + "<br>"
+        + myString;
+    </script>
+</body>
+</html>

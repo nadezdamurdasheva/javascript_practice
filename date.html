@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id = "demo"></p>
+    <script>
+        var d = new Date(2020, 10, 18, 14, 55, 30);
+        var d2 = new Date(98, 11, 17);
+        var d3 = new Date("2020-11-18");
+        var d4 = new Date("2020-11-18T15:01:30");
+        var d5 = new Date("11/18/2020");
+        var d6 = new Date("Dec 17 1998");
+        var d7 = Date.parse(d6);
+        var d8 = new Date(d7);
+        var d9 = new Date();
+        var months = ["January", "February", "March", "April", "May", "June", "July", 
+        "August", "September", "October", "November", "December"];
+        var d10 = new Date();
+        d10.setFullYear(1998);
+        document.getElementById("demo").innerHTML = d + "<br>" + d2 + "<br>" + d.toDateString() + "<br>" + d3 + "<br>" 
+        +d4 + "<br>" + d5 + "<br>" + d6 + "<br>" + d7 + "<br>" + d8 + "<br>" + d8.getTime() + "<br>" +d8.getFullYear()
+        +"<br>"+months[d.getMonth()] + "<br>" + d10;
+    </script>
+</body>
+</html>

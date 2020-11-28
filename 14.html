@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id ="demo"></p>
+
+    <script>
+        var points = [40, 100, 1, 5, 25, 10];
+        function myArrayMax(arr) {
+            return Math.max.apply(null, arr);
+        }
+        function myArrayMin(arr){
+            return Math.min.apply(null, arr);
+        }
+        document.getElementById("demo").innerHTML = myArrayMax(points) + ' ' + myArrayMin(points);
+    </script>
+</body>
+</html>

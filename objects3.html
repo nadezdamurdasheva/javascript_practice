@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        function Person (name,surname,age,hobby) {
+            this.name = name;
+            this.surname = surname;
+            this.age = age;
+            this.hobby = hobby;
+            this.full_name = function () {
+                return this.name + " " + this.surname;
+            }
+            this.change_name = function(value) {
+                this.name = value;
+            }
+        }
+
+        var person1 = new Person("Nadya", "Mur", 21, "drawing");
+        person1.family = "yes";
+        var person2 = new Person("Nadya", "Mur", 21, "drawing");
+        person2.change_name("Mama");
+
+        Person.prototype.nationality = "Russian";
+        Person.prototype.age_and_hobby = function () {
+            return this.age + " " + this.hobby;
+        }
+        Object.defineProperty(person1,"name",{writable: false}); //read-only property
+
+        Object.defineProperty(person1,"surname_age", {
+            get: function() {return this.surname + " " + this.age;}
+        });
+        person1.name = "Name"; // i can't change person1.name
+        document.getElementById("demo").innerHTML = person1.name + person1.surname + person1.age + person1.hobby
+        + person1.family + "<br>" + person1.full_name() + "<br>" + person2.name + "<br>" + person1.nationality +
+        "<br>" +person1.age_and_hobby() + "<br>" + Object.getOwnPropertyNames(person1) + "<br>"+
+        Object.keys(person1) + "<br>" + person1.surname_age;
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id ="demo"></p>
+
+    <script>
+        var points = [40, 100, 1, 5, 25, 10];
+        function myArrayMax(arr) {
+            var len = arr.length;
+            var max = -Infinity;
+            while (len--) {
+                if (arr[len] > max) {
+                max = arr[len];
+                }
+            }
+            return max;
+        }
+        function myArrayMin(arr) {
+            var len = arr.length;
+            var min = Infinity;
+            while (len--) {
+                if (arr[len] < min) {
+                min = arr[len];
+                }
+            }
+            return min;
+        }
+        document.getElementById("demo").innerHTML = myArrayMax(points) + ' ' + myArrayMin(points);
+    </script>
+</body>
+</html>

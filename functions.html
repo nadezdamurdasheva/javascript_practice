@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        (function() {
+            document.getElementById("demo").innerHTML = "I am self-invoked function";
+        })();
+
+        function myFunc(a,b){
+            return a * b;
+        }
+        var x = myFunc(4,3) * 2;
+        const y = (a,b) => a + b;
+
+        function findMax () {
+            var i;
+            var max = -Infinity;
+            for (i = 0; i < arguments.length; i++) {
+                if (arguments[i] > max) {
+                    max = arguments[i];
+                }
+            }
+            return max;
+        }
+        document.getElementById("demo").innerHTML += "<br>" + x + "<br>" + y(4,5) + "<br>" +
+        findMax(-1,-2,-3,0,-5);
+    </script>
+</body>
+</html>

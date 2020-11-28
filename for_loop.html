@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <p id = "demo2"></p>
+    <script>
+        var names =["Nadya","Natasha","Papa","Mama"];
+        var text = "<ul>";
+        for(var i=0;i<names.length;i++){
+            text += "<li>" + names[i] + "</li>";
+        }
+        text += "</ul>";
+        document.getElementById("demo").innerHTML = text;
+
+        var person = {name: "Nadya",age: 21, hobby:"drawing"};
+        var text_person = "";
+        var text2_person = "";
+        var j;
+        for(i in person){
+            text_person += i + "<br>";
+        }
+        document.getElementById("demo2").innerHTML = text_person;
+    </script>
+</body>
+</html>

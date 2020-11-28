@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id = "demo"></p>
+    <script>
+        var text;
+        var x = 0;
+        switch (x){
+            case 0:
+            case 1:
+                text = "0 or 1";
+                break;
+            case 5:
+            case 6:
+                text = "5 or 6";
+                break;
+            default: text = "default";
+        }
+        document.getElementById("demo").innerHTML += text + "<br>";
+    </script>
+</body>
+</html>

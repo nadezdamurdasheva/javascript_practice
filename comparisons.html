@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Input your age and click the button</p>
+    <input id="age" value="18" />
+    <button onclick="myFunc()">Try it!</button>
+    <p id="demo"></p>
+    <script>
+        function myFunc(){
+            var voteable;
+            var age = document.getElementById("age").value;
+            if(isNaN(age)){
+                voteable = "Input is not a number";
+            }else if(age<0){
+                voteable = "Input number more or equal 0";
+            }else {
+                voteable = (age<18) ? "Too young": "Old enough";
+            }
+            document.getElementById("demo").innerHTML = voteable;
+        }
+    </script>
+</body>
+</html>

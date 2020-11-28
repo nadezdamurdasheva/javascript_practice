@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Functions</h2>
+
+<p>This example calls a function which performs a calculation and returns the result:</p>
+
+<p id="demo"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<p id="demo4"></p>
+<button onclick="document.getElementById('demo2').innerHTML = Date()">The time is?</button>
+<button onclick="this.innerHTML = Date()">The time is?</button>
+<button onclick="displayDate()">The time is?</button>
+<script>
+var my_object = {
+    first_name: "Nadya",
+    age: 21,
+    has_family: false,
+    func_name: function myFunc(){
+        return this.first_name + ' ' + this.age;
+    },
+};
+document.getElementById("demo").innerHTML = my_object.func_name();
+function displayDate(){
+    document.getElementById("demo3").innerHTML = Date();
+}
+document.getElementById("demo4").innerHTML = "Hello \
+Dolly!";
+</script>
+
+</body>
+</html>

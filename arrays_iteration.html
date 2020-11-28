@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id ="demo"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+
+    <script>
+        var numbers1 = [1,2,3,4,5,6];
+        var numbers2 = numbers1.map(myFunc);
+        function myFunc(value,index,array){
+            return value*2;
+        }
+        document.getElementById("demo").innerHTML = numbers1 + "<br>" + numbers2;
+
+        var numbers3 = [1,2,3,4,5,6];
+        var numbers4 = numbers3.filter(myFunc2);
+        function myFunc2(value,index,array){
+            return value > 2;
+        }
+        document.getElementById("demo2").innerHTML = "<br>" + numbers3 + "<br>" + numbers4;
+
+        var numbers5 = [1,2,3,4,5];
+        var numbers6 = numbers5.reduce(myFunc3);
+        function myFunc3(total,value,index,array) {
+            return total + value;
+        }
+        document.getElementById("demo3").innerHTML = "<br>" + numbers5 + "<br>" + numbers6;
+
+        var numbers7 = [1,2,3,4,5,6];
+        var numbers8 = numbers7.every(myFunc4);
+        function myFunc4(value,index,array){
+            return value>1;
+        }
+        document.getElementById("demo3").innerHTML = "<br>" + numbers7 + "<br>" + numbers8;
+
+        var numbers9 = [45, 4, 9, 16, 25];
+        var numbers10 = numbers9.some(myFunction);
+
+        document.getElementById("demo4").innerHTML = "Some over 18 is " + numbers10;
+
+        function myFunction(value, index, array) {
+        return value > 45;
+        }
+
+        var fruits = ["Apple", "Mango","Orange"];
+        var fruits_apple = fruits.indexOf("Apple");
+        document.getElementById("demo4").innerHTML = fruits_apple;
+
+        var fruits2 = ["Apple", "Mango","Apple","Orange"];
+        var fruits_apple2 = fruits2.lastIndexOf("Apple");
+        document.getElementById("demo4").innerHTML += " " + fruits_apple2;
+
+
+        var numbers_num = [4, 9, 16, 25, 29];
+        var first = numbers_num.find(myFunction_func);
+        var first_fir = numbers_num.findIndex(myFuncIndex);
+        function myFunction_func(value, index, array) {
+            return value > 18;
+        }
+        function myFuncIndex(value, index, array) {
+            return value > 18;
+        }
+        document.getElementById("demo4").innerHTML += " " + first + " " + first_fir;
+    </script>
+</body>
+</html>

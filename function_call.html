@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        var person = {
+            full_name: function(astrology="oven",imbt="dost") {
+                return this.name + " " + this.surname + " " + astrology + " " + imbt;
+            }
+        };
+        var person1 = {
+            name: "Nadya",
+            surname: "Mur"
+        };
+        var person2 = {
+            name: "Kira",
+            surname: "Kozlov"
+        };
+
+        document.getElementById("demo").innerHTML = person.full_name.call(person2) + "<br>" +
+        person.full_name.apply(person1, ["arrowner","djek"]) + "<br>" + Math.max(-1,-2,-3,5,0) + 
+        Math.max.apply(null,[-1,-2,-3,9,0]);
+    </script>
+</body>
+</html>
